@@ -4,15 +4,15 @@ import profile from "../assets/images/image-profile-desktop.webp";
 import profile_mobile from "../assets/images/image-profile-mobile.webp";
 import circle from "../assets/images/pattern-circle.svg";
 import "../styles/hero.scss";
-export default function Hero() {
-  const [width, setWidth] = useState(0);
-  console.log(width);
-  const handleResize = () => setWidth(window.innerWidth);
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+export default function Hero({ width }) {
+  // const [width, setWidth] = useState(0);
+  // console.log(width);
+  // const handleResize = () => setWidth(window.innerWidth);
+  // useEffect(() => {
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   return (
     <section className="section_hero">

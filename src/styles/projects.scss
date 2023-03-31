@@ -1,0 +1,126 @@
+@import "./settings/_settings";
+.section_projects {
+  > header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    > h2 {
+      font-size: $headingXL;
+      letter-spacing: -2.5px;
+    }
+  }
+}
+.projects {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 70px;
+  column-gap: 30px;
+  margin: 80px auto;
+
+  > article {
+    > img {
+      object-fit: cover;
+      width: 540px;
+      height: 400px;
+    }
+    > .cardimgage {
+      position: relative;
+      overflow: hidden;
+      width: 540px;
+      height: 400px;
+      cursor: pointer;
+      > img {
+        object-fit: cover;
+        width: 100%;
+      }
+      > .backgroundoverlay {
+        position: absolute;
+        background-color: transparent;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+      }
+      &:hover {
+        > .backgroundoverlay {
+          background-color: rgba(0, 0, 0, 0.7);
+          height: 100%;
+          width: 100%;
+          visibility: visible;
+          transition: 0.3s ease-in-out;
+        }
+      }
+    }
+
+    > h3 {
+      text-transform: uppercase;
+      font-size: $headingM;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 7px;
+      line-height: 32px;
+    }
+    > .stack {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+    > .buttoncode {
+      display: flex;
+      width: 100%;
+      gap: 30px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@include respond(tablet) {
+  .section_projects {
+    > header {
+      width: 95%;
+      > h2 {
+        font-size: 72px;
+      }
+    }
+  }
+  .projects {
+    width: 95%;
+    margin: 80px auto 0 auto;
+    > article {
+      img {
+        width: 100%;
+        height: 253px;
+      }
+    }
+  }
+}
+@include respond(mobile) {
+  .section_projects {
+    > header {
+      width: 95%;
+      > h2 {
+        font-size: 40px;
+      }
+    }
+  }
+  .projects {
+    grid-template-columns: auto;
+    width: 95%;
+    row-gap: 50px;
+    column-gap: 0;
+    > article {
+      img {
+        width: 100%;
+        height: 253px;
+      }
+    }
+  }
+}

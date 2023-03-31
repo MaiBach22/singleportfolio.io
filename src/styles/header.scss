@@ -23,7 +23,8 @@ nav {
 
 @include respond(tablet) {
   nav {
-    padding: 30px;
+    width: 95%;
+    margin: 30px auto 90px auto;
   }
 }
 @include respond(mobile) {

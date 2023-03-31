@@ -16,6 +16,9 @@ body {
   background-repeat: no-repeat;
   background-position-x: -100px;
   background-position-y: 100px;
+  @include respond(tablet) {
+    background-position-x: -322px;
+  }
 }
 
 #root {
