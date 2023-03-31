@@ -1,0 +1,28 @@
+@import "./settings/_settings";
+
+.section_skill {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 58px;
+  border-top: 1px solid $text;
+  margin: 104px auto;
+  padding: 72px 0;
+
+  ul > li:first-child {
+    font-size: $headingL;
+    font-weight: 700;
+  }
+  ul > li {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  @include respond(tablet) {
+    margin: 60px auto;
+    width: 90%;
+  }
+  @include respond(mobile) {
+    margin: 0 auto;
+    text-align: center;
+  }
+}

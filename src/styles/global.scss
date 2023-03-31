@@ -1,0 +1,115 @@
+@import "./settings/_settings";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: $text;
+  background-color: $primary;
+  background-image: url("../assets/images/pattern-rings.svg");
+  background-repeat: no-repeat;
+  background-position-x: -100px;
+  background-position-y: 100px;
+}
+
+#root {
+  padding: 0 165px;
+  margin: 0 auto;
+  width: 1440px;
+
+  @include respond(mobile) {
+    width: 100%;
+    padding: 0;
+  }
+  @include respond(tablet) {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: $text;
+}
+ul,
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  > a {
+    text-decoration: none;
+    color: $text;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 2.29px;
+    position: relative;
+    transition: 0.4s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      left: 0;
+      bottom: -10px;
+      background-color: $secondary;
+      transform: scale(0.5, 1);
+      transition: 0.4s ease-in-out;
+    }
+    &:hover {
+      color: $secondary;
+      transition: 0.4s ease-in-out;
+    }
+    &:hover:after {
+      transform: scale(1, 1);
+      transition: 0.4s ease-in-out;
+    }
+  }
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $text;
+  width: 100%;
+  height: 42px;
+  transition: 0.4s ease-in-out;
+  color: $text;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.22px;
+  font-weight: 500;
+  padding-left: 24px;
+  text-transform: uppercase;
+  x > .error {
+    border-bottom: 1px solid red;
+    transition: 0.4s ease-in-out;
+  }
+  > .active {
+    border-bottom: 1px solid $secondary;
+    transition: 0.4s ease-in-out;
+  }
+}

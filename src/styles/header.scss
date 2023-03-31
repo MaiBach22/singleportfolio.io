@@ -1,0 +1,54 @@
+@import "./settings/_settings";
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+
+  > .social {
+    > svg {
+      margin-right: 32px;
+      fill: $text;
+      cursor: pointer;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        fill: $secondary;
+        transition: 0.4s ease-in-out;
+      }
+    }
+  }
+}
+
+@include respond(tablet) {
+  nav {
+    padding: 30px;
+  }
+}
+@include respond(mobile) {
+  nav {
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 20px;
+    > .logo {
+      text-align: center;
+      margin-bottom: 20px;
+      > a > h1 {
+        font-size: $headingM;
+        letter-spacing: -0.33px;
+        line-height: 32px;
+      }
+    }
+    > .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 153px;
+      > svg {
+        margin-right: 0;
+      }
+    }
+  }
+}
